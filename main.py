@@ -10,3 +10,4 @@ def print_logs(cloud_event):
   print(object_name)
   print("got bucket ")
   print(bucket_name)
+  print("checking source repo sync.")
