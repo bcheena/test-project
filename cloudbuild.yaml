@@ -1,0 +1,23 @@
+steps:
+- name: 'gcr.io/google.com/cloudsdktool/cloud-sdk'
+  args:
+  - 'gcloud'
+  - 'functions'
+  - 'deploy'
+  - '$_FUNCTION_NAME'
+  - '--trigger-resource=$_BUCKET_NAME'
+  - '--entry-point=$_ENTRY_POINT'
+  - '--trigger-event=google.storage.object.finalize'
+  - '--source=.'
+  - '--region=us-central1'
+  - '--runtime=python312'
+  - '--project=u620d1c629cab1744p-tp'
+  - '--memory=8192'
+  - '--service-account="849016812893-compute@developer.gserviceaccount.com"'
+  - '--no-gen2'
+
+
+substitutions:
+  _FUNCTION_NAME: test-func-bcheena
+  _BUCKET_NAME: test-bucket-bcheena
+  _ENTRY_POINT: print_logs
