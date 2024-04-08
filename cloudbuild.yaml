@@ -18,6 +18,6 @@ steps:
 
 
 substitutions:
-  _FUNCTION_NAME: test-func-bcheena
-  _BUCKET_NAME: test-bucket-bcheena
+  _FUNCTION_NAME: test-func-bcheena2
+  _BUCKET_NAME: test-bucket-bcheena2
   _ENTRY_POINT: print_logs
