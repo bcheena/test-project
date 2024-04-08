@@ -13,7 +13,7 @@ steps:
   - '--runtime=python312'
   - '--project=u620d1c629cab1744p-tp'
   - '--memory=8192'
-  - '--service-account="849016812893-compute@developer.gserviceaccount.com"'
+  - '--service-account=849016812893-compute@developer.gserviceaccount.com'
   - '--no-gen2'
 
 
