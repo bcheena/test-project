@@ -11,13 +11,14 @@ steps:
   - '--source=.'
   - '--region=us-central1'
   - '--runtime=python312'
-  - '--project=u620d1c629cab1744p-tp'
+  - '--project=$PROJECT_ID'
   - '--memory=8192'
-  - '--service-account=849016812893-compute@developer.gserviceaccount.com'
+  - '--update-env-vars="GCP_PROJECT=$PROJECT_ID"'
+  - '--service-account=$PROJECT_NUMBER-compute@developer.gserviceaccount.com'
   - '--no-gen2'
 
 
 substitutions:
-  _FUNCTION_NAME: test-func-bcheena2
-  _BUCKET_NAME: test-bucket-bcheena2
-  _ENTRY_POINT: print_logs
+  _FUNCTION_NAME: "bcheena-test-func"
+  _BUCKET_NAME: "bcheena-test-bucket-$PROJECT_ID"
+  _ENTRY_POINT: "print_logs"
