@@ -4,9 +4,9 @@ steps:
   - 'gcloud'
   - 'functions'
   - 'deploy'
-  - '$_FUNCTION_NAME'
-  - '--trigger-resource=$_BUCKET_NAME'
-  - '--entry-point=$_ENTRY_POINT'
+  - 'bcheena-test-func'
+  - '--trigger-resource=bcheena-test-bucket-$PROJECT_ID'
+  - '--entry-point=print_logs'
   - '--trigger-event=google.storage.object.finalize'
   - '--source=.'
   - '--region=us-central1'
@@ -16,9 +16,3 @@ steps:
   - '--update-env-vars="GCP_PROJECT=$PROJECT_ID"'
   - '--service-account=$PROJECT_NUMBER-compute@developer.gserviceaccount.com'
   - '--no-gen2'
-
-
-substitutions:
-  _FUNCTION_NAME: "bcheena-test-func"
-  _BUCKET_NAME: "bcheena-test-bucket-$PROJECT_ID"
-  _ENTRY_POINT: "print_logs"
